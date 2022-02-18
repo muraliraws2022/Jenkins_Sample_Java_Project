@@ -39,6 +39,8 @@ public class ContactForm extends FormLayout {
     public ContactForm() {
         configureComponents();
         buildLayout();
+        //Added tp inject error in the code
+        IntroduceanError();
     }
 
     private void configureComponents() {
