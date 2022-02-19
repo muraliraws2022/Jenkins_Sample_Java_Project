@@ -3,9 +3,7 @@ node {
     git url: 'https://github.com/ravishsubramanya/Jenkins_Sample_Java_Project.git'
   }
   stage('Dependency Check') {
-        steps {
             // Run OWASP Dependency Check
-            dependencyCheck additionalArguments: '-f "HTML, XML,CSV" -s .'
-        }
+            dependencyCheck additionalArguments: 'HTML, XML,CSV', odcInstallation: 'OWASP_DC'
       }
 }
