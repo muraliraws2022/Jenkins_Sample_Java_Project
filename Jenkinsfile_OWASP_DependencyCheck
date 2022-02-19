@@ -1,11 +1,11 @@
-pipeline {
-   agent any
-   stages {
-    stage('Dependency Check') {
+node {
+  stage('SCM') {
+    git url: 'https://github.com/ravishsubramanya/Jenkins_multijob_pipeline_code.git'
+  }
+  stage('Dependency Check') {
         steps {
             // Run OWASP Dependency Check
             dependencyCheck additionalArguments: '-f "HTML, XML,CSV" -s .'
         }
       }
-    }
-  }
+}
