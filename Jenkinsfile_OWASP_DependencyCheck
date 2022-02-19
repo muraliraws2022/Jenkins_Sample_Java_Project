@@ -1,0 +1,11 @@
+pipeline {
+   agent any
+   stages {
+    stage('Dependency Check') {
+        steps {
+            // Run OWASP Dependency Check
+            dependencyCheck additionalArguments: '-f "HTML, XML,CSV" -s .'
+        }
+      }
+    }
+  }
